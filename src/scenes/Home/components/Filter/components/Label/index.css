@@ -1,0 +1,12 @@
+.Label {
+  display: flex;
+  justify-content: space-between;
+}
+
+.Label--selection {
+  color: #959595;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  margin-left: 20px;
+}

@@ -1,0 +1,25 @@
+.MultiSelect {
+}
+
+.MultiSelect--buttons {
+  display: flex;
+  justify-content: space-between;
+}
+
+.MultiSelect--buttons button {
+  flex-grow: 1;
+  height: 40px;
+  background: white;
+  border: 1px solid #cccccc;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.MultiSelect--buttons button:not(:last-child) {
+  margin-right: 5px;
+}
+
+.MultiSelect--buttons button.selected {
+  background: #243c29;
+  color: white;
+}
