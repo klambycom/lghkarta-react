@@ -7,7 +7,7 @@ import Label from "./components/Label";
 import Range from "./components/Range";
 import MultiSelect from "./components/MultiSelect";
 
-import {MAX_RENT, MIN_RENT, STEP_RENT, ROOM_VALUES, TYPES} from "../../../../services/settings";
+import {MAX_RENT, MIN_RENT, STEP_RENT, ROOM_VALUES, TYPES, MAX_ROOMS} from "../../../../services/settings";
 
 import "./index.css";
 
@@ -47,7 +47,7 @@ class Filter extends Component {
           selected={types}
           onChange={types => this.setState({types})}
         />
-        <Query query={FILTER_QUERY} variables={{rent, rooms, types}}>
+        <Query query={FILTER_QUERY} variables={{rent, rooms, types, max_rooms: MAX_ROOMS}}>
           {({loading, error, data}) => {
             if (loading) return "Loading... TODO This should still be a button!";
             if (error) return `Error! ${error.message}`;
@@ -65,8 +65,8 @@ class Filter extends Component {
 }
 
 const FILTER_QUERY = gql`
-  query FilterQuery($rent: Int!, $rooms: [Int]!, $types: [String]!) {
-    filter(maxRent: $rent, rooms: $rooms, types: $types) {
+  query FilterQuery($rent: Int!, $rooms: [Int]!, $max_rooms: Int!, $types: [String]!) {
+    filter(maxRent: $rent, rooms: $rooms, maxRooms: $max_rooms, types: $types) {
       nrOfItems
     }
   }
