@@ -9,7 +9,7 @@ import {BrowserRouter, Switch, Route} from "react-router-dom";
 
 import './index.css';
 
-const httpLink = new HttpLink({uri: "http://localhost:4000/api/graphql"});
+const httpLink = new HttpLink({uri: "http://lghkarta.se/api/graphql"});
 
 const client = new ApolloClient({
   link: httpLink,
