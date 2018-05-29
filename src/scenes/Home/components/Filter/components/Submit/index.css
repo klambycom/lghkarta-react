@@ -1,0 +1,13 @@
+.Submit {
+  border: 2px solid #243c29;
+  padding: 15px 30px;
+  font-size: 1em;
+  background: white;
+  color: #243c29;
+}
+
+.Submit span {
+  font-weight: lighter;
+  font-size: .8em;
+  margin-left: 10px;
+}

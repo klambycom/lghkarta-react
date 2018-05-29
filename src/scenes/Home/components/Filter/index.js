@@ -6,6 +6,7 @@ import formatter from "../../../../services/formatter";
 import Label from "./components/Label";
 import Range from "./components/Range";
 import MultiSelect from "./components/MultiSelect";
+import Submit from "./components/Submit";
 
 import {MAX_RENT, MIN_RENT, STEP_RENT, ROOM_VALUES, TYPES, MAX_ROOMS} from "../../../../services/settings";
 
@@ -49,14 +50,10 @@ class Filter extends Component {
         />
         <Query query={FILTER_QUERY} variables={{rent, rooms, types, max_rooms: MAX_ROOMS}}>
           {({loading, error, data}) => {
-            if (loading) return "Loading... TODO This should still be a button!";
+            if (loading) return <Submit onClick={() => this.handleSubmit()} />;
             if (error) return `Error! ${error.message}`;
 
-            return (
-              <button className="Filter--submit" onClick={() => this.handleSubmit()}>
-                Se lägenheter <span>({data.filter.nrOfItems} st)</span>
-              </button>
-            );
+            return <Submit count={data.filter.nrOfItems} onClick={() => this.handleSubmit()} />;
           }}
         </Query>
       </div>
