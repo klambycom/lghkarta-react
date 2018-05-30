@@ -19,12 +19,9 @@ class Filter extends Component {
     types: ["apartment", "new_construction"],
   };
 
-  handleSubmit() {
-    console.log(this.state);
-  }
-
   render() {
     const {rent, rooms, types} = this.state;
+    const filter = {rent, rooms, types};
 
     return (
       <div className="Filter">
@@ -48,12 +45,12 @@ class Filter extends Component {
           selected={types}
           onChange={types => this.setState({types})}
         />
-        <Query query={FILTER_QUERY} variables={{rent, rooms, types, max_rooms: MAX_ROOMS}}>
+        <Query query={FILTER_QUERY} variables={{...filter, max_rooms: MAX_ROOMS}}>
           {({loading, error, data}) => {
-            if (loading) return <Submit onClick={() => this.handleSubmit()} />;
+            if (loading) return <Submit filter={filter} />;
             if (error) return `Error! ${error.message}`;
 
-            return <Submit count={data.filter.nrOfItems} onClick={() => this.handleSubmit()} />;
+            return <Submit count={data.filter.nrOfItems} filter={filter} />;
           }}
         </Query>
       </div>
