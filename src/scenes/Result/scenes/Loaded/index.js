@@ -4,6 +4,7 @@ import Map from "../../components/Map";
 import Pin from "../../components/Pin";
 import Apartment from "../../components/Apartment";
 import Pagination from "../../components/Pagination";
+import Shortcuts from "../../components/Shortcuts";
 
 import formatter from "../../../../services/formatter";
 
@@ -33,6 +34,14 @@ class Loaded extends Component {
 
     return (
       <div className="Result">
+        <Shortcuts
+          bind={[
+            {keys: ["j", "right"], help: "Nästa lägenhet", fn: () => this.setIndex(this.state.index + 1, true)},
+            {keys: ["k", "left"], help: "Föregående lägenhet", fn: () => this.setIndex(this.state.index - 1, true)},
+            {keys: ["g"], help: "Första lägenheten", fn: () => this.setIndex(0, true)},
+            {keys: ["G"], help: "Sista lägenheten", fn: () => this.setIndex(apartments.length - 1, true)},
+          ]}
+        />
         <div className="Result--header">
           <div className="Result--logo">Lghkarta.se</div>
           <div className="Result--filter">
