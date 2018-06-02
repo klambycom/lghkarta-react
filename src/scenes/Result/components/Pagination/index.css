@@ -1,0 +1,11 @@
+.Pagination {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 10px;
+  background: #f2f2f2;
+}
+
+.Pagination--text {
+  font-size: 0.8em;
+}
