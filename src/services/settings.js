@@ -28,4 +28,23 @@ const TYPES = {
   student_housing: "Studentbostad"
 };
 
-export {MAX_RENT, MIN_RENT, STEP_RENT, ROOM_VALUES, MAX_ROOMS, LENGTH_ROOMS, TYPES};
+// Google Maps API
+const GOOGLE_MAPS_JS = "https://maps.googleapis.com/maps/api/js?v=3.exp&libraries=geometry,drawing,places";
+const GOOGLE_MAPS_KEY = "AIzaSyDtTZTBMSoEnrum5YU9JszzbX-y6MemEWs";
+
+const MAP_CENTER = {lat: 55.604981, lng: 13.003822};
+const MAP_ZOOM_LEVEL = 14;
+
+export {
+  MAX_RENT,
+  MIN_RENT,
+  STEP_RENT,
+  ROOM_VALUES,
+  MAX_ROOMS,
+  LENGTH_ROOMS,
+  TYPES,
+  GOOGLE_MAPS_JS,
+  GOOGLE_MAPS_KEY,
+  MAP_CENTER,
+  MAP_ZOOM_LEVEL
+};
