@@ -2,15 +2,20 @@ import React from "react";
 import {GoogleMap, withGoogleMap, withScriptjs} from "react-google-maps";
 import {GOOGLE_MAPS_JS, GOOGLE_MAPS_KEY, MAP_CENTER, MAP_ZOOM_LEVEL} from "../../../../services/settings";
 
-const GMap = withScriptjs(withGoogleMap(({children}) => {
+const GMap = withScriptjs(withGoogleMap(({children, onMapMounted}) => {
   return (
-    <GoogleMap defaultZoom={MAP_ZOOM_LEVEL} defaultCenter={MAP_CENTER} options={{gestureHandling: "cooperative"}}>
+    <GoogleMap
+      defaultZoom={MAP_ZOOM_LEVEL}
+      defaultCenter={MAP_CENTER}
+      options={{gestureHandling: "cooperative"}}
+      ref={onMapMounted}
+    >
       {children}
     </GoogleMap>
   );
 }));
 
-const Map = ({containerElement, children}) => {
+const Map = ({onMapMounted, containerElement, children}) => {
   return (
     <GMap
       googleMapURL={`${GOOGLE_MAPS_JS}&key=${GOOGLE_MAPS_KEY}`}
@@ -18,6 +23,7 @@ const Map = ({containerElement, children}) => {
       containerElement={containerElement}
       mapElement={<div style={{ height: `100%` }} />}
       children={children}
+      onMapMounted={onMapMounted}
     />
   );
 };
