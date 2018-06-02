@@ -27,6 +27,10 @@ class Loaded extends Component {
     this.setState({index});
   }
 
+  visitCurrent() {
+    window.open(this.props.apartments[this.state.index].url, "_blank");
+  }
+
   render() {
     const {index} = this.state;
     const {filter, apartments} = this.props;
@@ -40,6 +44,7 @@ class Loaded extends Component {
             {keys: ["k", "left"], help: "Föregående lägenhet", fn: () => this.setIndex(this.state.index - 1, true)},
             {keys: ["g"], help: "Första lägenheten", fn: () => this.setIndex(0, true)},
             {keys: ["G"], help: "Sista lägenheten", fn: () => this.setIndex(apartments.length - 1, true)},
+            {keys: ["enter"], help: "Besök annonsen", fn: () => this.visitCurrent()},
           ]}
         />
         <div className="Result--header">
