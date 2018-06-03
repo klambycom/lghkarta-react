@@ -1,5 +1,6 @@
 import React from "react";
 import {GoogleMap, withGoogleMap, withScriptjs} from "react-google-maps";
+import {MarkerClusterer} from "react-google-maps/lib/components/addons/MarkerClusterer";
 import {GOOGLE_MAPS_JS, GOOGLE_MAPS_KEY, MAP_CENTER, MAP_ZOOM_LEVEL} from "../../../../services/settings";
 
 const GMap = withScriptjs(withGoogleMap(({children, onMapMounted}) => {
@@ -22,9 +23,15 @@ const Map = ({onMapMounted, containerElement, children}) => {
       loadingElement={<div style={{ height: `100%` }} />}
       containerElement={containerElement}
       mapElement={<div style={{ height: `100%` }} />}
-      children={children}
       onMapMounted={onMapMounted}
-    />
+    >
+      <MarkerClusterer
+        averageCenter
+        enableRetinaIcons
+      >
+        {children}
+      </MarkerClusterer>
+    </GMap>
   );
 };
 
