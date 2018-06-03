@@ -73,6 +73,7 @@ class Loaded extends Component {
               key={x.id}
               position={x.location}
               onClick={() => this.setIndex(i)}
+              icon={i === index ? "selected" : "default"}
             />
           ))}
         </Map>
