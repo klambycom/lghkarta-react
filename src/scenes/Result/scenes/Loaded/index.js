@@ -1,4 +1,5 @@
 import React, {Component} from "react";
+import {Link} from "react-router-dom";
 
 import Map from "../../components/Map";
 import Pin from "../../components/Pin";
@@ -48,7 +49,7 @@ class Loaded extends Component {
           ]}
         />
         <div className="Result--header">
-          <div className="Result--logo">Lghkarta.se</div>
+          <Link to="/" className="Result--logo">Lghkarta.se</Link>
           <div className="Result--filter">
             Maxhyra: {formatter.rent(filter.rent)};{" "}
             Antal rum: {formatter.rooms(filter.rooms)};{" "}
