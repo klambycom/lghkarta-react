@@ -1,5 +1,7 @@
 import React, { Component } from 'react';
+
 import Home from '../Home';
+import Result from '../Result';
 
 import {ApolloProvider} from "react-apollo";
 import {ApolloClient} from "apollo-client";
@@ -23,6 +25,7 @@ class App extends Component {
         <ApolloProvider client={client}>
           <Switch>
             <Route exact path="/" component={Home} />
+            <Route exact path="/result" component={Result} />
           </Switch>
         </ApolloProvider>
       </BrowserRouter>
