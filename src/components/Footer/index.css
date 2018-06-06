@@ -1,0 +1,19 @@
+.Footer {
+  background: #243c29;
+  padding: 30px 50px;
+  padding-top: 50px;
+  color: white;
+  background-position: right;
+  background-repeat: no-repeat;
+  background-size: auto 100%;
+  font-weight: lighter;
+  line-height: 1.3em;
+}
+
+.Footer--about {
+  max-width: 900px;
+}
+
+.Footer a {
+  color: white;
+}
