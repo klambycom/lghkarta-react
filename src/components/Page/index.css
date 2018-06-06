@@ -1,0 +1,10 @@
+.Page {
+  display: flex;
+  min-height: 100vh;
+  flex-direction: column;
+}
+
+.Page--content {
+  flex: 1;
+  padding: 50px;
+}
