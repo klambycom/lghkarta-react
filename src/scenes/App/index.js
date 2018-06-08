@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 
 import Home from '../Home';
 import Result from '../Result';
+import Privacy from '../Privacy';
 
 import {ApolloProvider} from "react-apollo";
 import {ApolloClient} from "apollo-client";
@@ -26,6 +27,7 @@ class App extends Component {
           <Switch>
             <Route exact path="/" component={Home} />
             <Route exact path="/result" component={Result} />
+            <Route exact path="/privacy" component={Privacy} />
           </Switch>
         </ApolloProvider>
       </BrowserRouter>
