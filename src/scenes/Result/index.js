@@ -5,11 +5,13 @@ import gql from "graphql-tag";
 import Loaded from "./scenes/Loaded";
 
 import create_filter from "./services/create_filter";
+import history from "../../services/history";
 
 import "./index.css";
 
 const Result = ({location}) => {
   let filter = create_filter(location.search);
+  history.add(filter);
 
   return (
     <Query query={FILTER_QUERY} variables={filter}>
