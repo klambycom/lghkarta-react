@@ -1,0 +1,11 @@
+.History {
+  margin-top: 100px;
+  background: #ededed;
+  padding: 20px;
+  padding-top: 10px;
+  line-height: 1.5em;
+}
+
+.History--row {
+  display: block;
+}

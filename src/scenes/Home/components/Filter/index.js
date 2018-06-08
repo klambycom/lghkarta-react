@@ -2,11 +2,13 @@ import React, {Component} from "react";
 import {Query} from "react-apollo";
 import gql from "graphql-tag";
 import formatter from "../../../../services/formatter";
+import history from "../../../../services/history";
 
 import Label from "./components/Label";
 import Range from "./components/Range";
 import MultiSelect from "./components/MultiSelect";
 import Submit from "./components/Submit";
+import History from "./components/History";
 
 import {MAX_RENT, MIN_RENT, STEP_RENT, ROOM_VALUES, TYPES, MAX_ROOMS} from "../../../../services/settings";
 
@@ -53,6 +55,7 @@ class Filter extends Component {
             return <Submit count={data.filter.nrOfItems} filter={filter} />;
           }}
         </Query>
+        <History items={history.all()} />
       </div>
     );
   }
