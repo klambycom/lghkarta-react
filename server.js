@@ -6,7 +6,7 @@ const server = http.createServer((request, response) => {
     public: "build",
     headers: [
       {
-        source: "**/*.@(jpg|jpeg|gif|png|webp)",
+        source: "**/*.@(jpg|jpeg|gif|png|webp|css|js)",
         headers: [{
           key: "Cache-Control",
           value: "public, max-age=31536000"
