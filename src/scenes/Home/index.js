@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
-import image from './image.png';
+import image_png from './image.png';
+import image_webp from './image.webp';
 import './index.css';
 
 import Filter from "./components/Filter";
@@ -17,7 +18,10 @@ class Home extends Component {
               <Filter />
             </div>
             <div className="Home--image">
-              <img src={image} alt="Karta och Turning torso" />
+              <picture>
+                <source type="image/webp" srcSet={image_webp} />
+                <img src={image_png} alt="Karta och Turning torso" />
+              </picture>
             </div>
         </div>
       </Page>
