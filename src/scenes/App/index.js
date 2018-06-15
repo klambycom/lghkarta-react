@@ -13,7 +13,7 @@ const AsyncHome = asyncComponent(() => import("../Home"));
 const AsyncResult = asyncComponent(() => import("../Result"));
 const AsyncPrivacy = asyncComponent(() => import("../Privacy"));
 
-const httpLink = new HttpLink({uri: "http://lghkarta.se/api/graphql"});
+const httpLink = new HttpLink({uri: "https://lghkarta.se/api/graphql"});
 
 const client = new ApolloClient({
   link: httpLink,
