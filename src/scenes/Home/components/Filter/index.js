@@ -19,10 +19,15 @@ class Filter extends Component {
     rent: MAX_RENT,
     rooms: [],
     types: ["apartment", "new_construction"],
+    filter_history: [],
   };
 
+  componentDidMount() {
+    this.setState({filter_history: history.all()});
+  }
+
   render() {
-    const {rent, rooms, types} = this.state;
+    const {rent, rooms, types, filter_history} = this.state;
     const filter = {rent, rooms, types};
 
     return (
@@ -55,7 +60,7 @@ class Filter extends Component {
             return <Submit count={data.filter.nrOfItems} filter={filter} />;
           }}
         </Query>
-        <History items={history.all()} />
+        <History items={filter_history} />
       </div>
     );
   }

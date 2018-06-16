@@ -7,7 +7,7 @@ import {InMemoryCache} from "apollo-cache-inmemory";
 import {BrowserRouter, Switch, Route} from "react-router-dom";
 import asyncComponent from "../../components/AsyncComponent";
 
-const AsyncHome = asyncComponent(() => import("../Home"));
+import Home from "../Home";
 const AsyncResult = asyncComponent(() => import("../Result"));
 const AsyncPrivacy = asyncComponent(() => import("../Privacy"));
 
@@ -24,7 +24,7 @@ class App extends Component {
       <BrowserRouter>
         <ApolloProvider client={client}>
           <Switch>
-            <Route exact path="/" component={AsyncHome} />
+            <Route exact path="/" component={Home} />
             <Route exact path="/result" component={AsyncResult} />
             <Route exact path="/privacy" component={AsyncPrivacy} />
           </Switch>
