@@ -1,7 +1,7 @@
 const handler = require("serve-handler");
-const http2 = require("http2");
+const http = require("http");
 
-const server = http2.createServer((request, response) => {
+const server = http.createServer((request, response) => {
   return handler(request, response, {
     public: "build",
     headers: [
