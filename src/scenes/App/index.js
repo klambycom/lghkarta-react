@@ -7,8 +7,6 @@ import {InMemoryCache} from "apollo-cache-inmemory";
 import {BrowserRouter, Switch, Route} from "react-router-dom";
 import asyncComponent from "../../components/AsyncComponent";
 
-import './index.css';
-
 const AsyncHome = asyncComponent(() => import("../Home"));
 const AsyncResult = asyncComponent(() => import("../Result"));
 const AsyncPrivacy = asyncComponent(() => import("../Privacy"));
