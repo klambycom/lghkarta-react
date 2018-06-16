@@ -15,7 +15,10 @@ class Footer extends Component {
           <p>Jag skapade denna webbplats eftersom jag själv letar efter lägenhet och ville se lägenheterna på en karta.</p>
         </div>
         <div className="Footer-links">
-          <span>&#127850; <Link to="/privacy">Kakor och sekretessinställningar</Link></span>
+          <span>
+            <span aria-labelledby="jsx-a11y/accessible-emoji" role="img">&#127850;</span>{" "}
+            <Link to="/privacy">Kakor och sekretessinställningar</Link>
+          </span>
         </div>
       </footer>
     );
